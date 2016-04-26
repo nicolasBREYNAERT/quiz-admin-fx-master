@@ -53,7 +53,7 @@ public class AccueilController extends AbstractController {
 	}
 	
 	public void handleBtDomains() {
-		mainApp.showPersonOverview();
+		mainApp.showDomainOverview();
 	}
 
 	public void handleDisconnect() {
