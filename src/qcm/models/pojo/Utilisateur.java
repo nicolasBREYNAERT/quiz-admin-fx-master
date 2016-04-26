@@ -22,6 +22,7 @@ public class Utilisateur {
 
 	public Utilisateur() {
 		super();
+		idRang=1;
 		utilisateur_groupes=new ArrayList<>();realisations=new ArrayList<>();questionnaires=new ArrayList<>();rang=new Rang();
 	}
 	/**
