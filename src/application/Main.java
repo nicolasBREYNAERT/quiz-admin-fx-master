@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import qcm.models.pojo.Domaine;
 import qcm.models.pojo.Questionnaire;
 import qcm.models.pojo.Reponse;
 import qcm.models.pojo.Utilisateur;
@@ -205,6 +206,7 @@ public class Main extends Application implements Observer {
 		taskQueue.getAll(Utilisateur.class);
 		taskQueue.getAll(Questionnaire.class);
 		taskQueue.getAll(Reponse.class);
+		//taskQueue.getAll(Domaine.class);
 	}
 
 	public BorderPane getRootLayout() {

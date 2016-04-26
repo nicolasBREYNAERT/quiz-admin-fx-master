@@ -23,7 +23,10 @@ public class AccueilController extends AbstractController {
 
 	@FXML
 	private Button btUsers;
-
+	
+	@FXML
+	private Button btDomains;
+	
 	@FXML
 	private Button btDisconnect;
 
@@ -46,6 +49,10 @@ public class AccueilController extends AbstractController {
 	}
 
 	public void handleBtUsers() {
+		mainApp.showPersonOverview();
+	}
+	
+	public void handleBtDomains() {
 		mainApp.showPersonOverview();
 	}
 
