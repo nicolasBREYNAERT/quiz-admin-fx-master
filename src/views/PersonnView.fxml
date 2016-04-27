@@ -44,9 +44,12 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Nom" GridPane.rowIndex="0">
+                        <Label text="Nom">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -64,7 +67,25 @@
                         <Label id="name" fx:id="nomLabel" text="Label" GridPane.columnIndex="1" />
                         <Label id="surName" fx:id="prenomLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label id="email" fx:id="emailLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="cmbReponses" prefHeight="30.0" prefWidth="498.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                        <ComboBox fx:id="cmbReponses" prefHeight="30.0" prefWidth="498.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" />
+                        <Label text="Nom d'utilisateur" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Mot de passe" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Rang" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label id="login" fx:id="loginLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label id="password" fx:id="passwordLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label id="rang" fx:id="rangLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <ButtonBar layoutX="81.0" layoutY="245.0" prefHeight="40.0" prefWidth="362.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
@@ -74,7 +95,7 @@
                         <Button mnemonicParsing="false" onAction="#deleteUser" text="Supprimer" />
                     </buttons>
                   </ButtonBar>
-                  <ListView fx:id="lvQuizzes" layoutX="7.0" layoutY="155.0" prefHeight="260.0" prefWidth="491.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="155.0" />
+                  <ListView fx:id="lvQuizzes" layoutX="7.0" layoutY="251.0" prefHeight="163.0" prefWidth="492.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="251.0" />
                </children>
             </AnchorPane>
         </items>

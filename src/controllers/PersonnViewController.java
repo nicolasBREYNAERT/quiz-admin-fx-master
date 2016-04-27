@@ -34,6 +34,15 @@ public class PersonnViewController extends AbstractController {
 
 	@FXML
 	private Label emailLabel;
+	
+	@FXML
+	private Label loginLabel;
+	
+	@FXML
+	private Label passwordLabel;
+	
+	@FXML
+	private Label rangLabel;
 
 	@FXML
 	private ListView<Questionnaire> lvQuizzes;
@@ -102,11 +111,17 @@ public class PersonnViewController extends AbstractController {
 			prenomLabel.setText(user.getPrenom());
 			nomLabel.setText(user.getNom());
 			emailLabel.setText(user.getMail());
+			loginLabel.setText(user.getLogin());
+			passwordLabel.setText(user.getPassword());
+			rangLabel.setText(user.getRang().getLibelle());
 
 		} else {
 			prenomLabel.setText("");
 			nomLabel.setText("");
 			emailLabel.setText("");
+			loginLabel.setText("");
+			passwordLabel.setText("");
+			rangLabel.setText("");
 		}
 	}
 

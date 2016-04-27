@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import qcm.models.pojo.Utilisateur;
 
@@ -17,6 +18,15 @@ public class EditController extends ModalController {
 
 	@FXML
 	private TextField txtEmail;
+	
+	@FXML
+	private TextField txtLogin;
+	
+	@FXML
+	private TextField txtPassword;
+	
+	@FXML
+	private ComboBox cbRang;
 
 	@FXML
 	private Button btOkay;
@@ -31,6 +41,8 @@ public class EditController extends ModalController {
 		txtNom.setText(user.getNom());
 		txtPrenom.setText(user.getPrenom());
 		txtEmail.setText(user.getMail());
+		txtLogin.setText(user.getLogin());
+		txtPassword.setText(user.getPassword());
 	}
 
 	/**
@@ -42,6 +54,8 @@ public class EditController extends ModalController {
 			user.setNom(txtNom.getText());
 			user.setPrenom(txtPrenom.getText());
 			user.setMail(txtEmail.getText());
+			user.setLogin(txtLogin.getText());
+			user.setPassword(txtPassword.getText());
 			okClicked = true;
 			dialogStage.close();
 		}
@@ -71,6 +85,12 @@ public class EditController extends ModalController {
 		}
 		if (txtEmail.getText() == null || txtEmail.getText().length() == 0) {
 			errorMessage += "No valid email!\n";
+		}
+		if (txtLogin.getText() == null || txtLogin.getText().length() == 0) {
+			errorMessage += "No valid login!\n";
+		}
+		if (txtPassword.getText() == null || txtPassword.getText().length() == 0) {
+			errorMessage += "No valid password!\n";
 		}
 
 		if (errorMessage.length() == 0) {
