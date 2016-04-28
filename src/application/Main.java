@@ -172,6 +172,10 @@ public class Main extends Application implements Observer {
 	public ObservableList<Utilisateur> getPersonData() {
 		return usersList;
 	}
+	
+	public ObservableList<Domaine> getDomainData() {
+		return domainsList;
+	}
 
 	public void setPersonData(ObservableList<Utilisateur> personData) {
 		this.usersList = personData;
@@ -212,7 +216,7 @@ public class Main extends Application implements Observer {
 		taskQueue.getAll(Utilisateur.class);
 		taskQueue.getAll(Questionnaire.class);
 		taskQueue.getAll(Reponse.class);
-		//taskQueue.getAll(Domaine.class);
+		taskQueue.getAll(Domaine.class);
 	}
 
 	public BorderPane getRootLayout() {
