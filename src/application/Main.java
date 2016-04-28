@@ -35,6 +35,7 @@ public class Main extends Application implements Observer {
 	private ObservableList<Utilisateur> usersList;
 	private ObservableList<Questionnaire> quizList;
 	private ObservableList<Reponse> reponsesList;
+	private ObservableList<Domaine> domainsList;
 	private PersonnViewController personnViewController;
 	private DomainViewController domainViewController;
 	private AccueilController accueilController;
@@ -149,6 +150,7 @@ public class Main extends Application implements Observer {
 		usersList = webGate.getList(Utilisateur.class);
 		quizList = webGate.getList(Questionnaire.class);
 		reponsesList = webGate.getList(Reponse.class);
+		domainsList=webGate.getList(Domaine.class);
 		/*
 		 * try { List<Utilisateur> users = webGate.getAll(Utilisateur.class); for (Utilisateur u : users) { usersList.add(u); } } catch (IOException e) { // TODO Alert Bootstrap JavaFX
 		 * e.printStackTrace(); }
