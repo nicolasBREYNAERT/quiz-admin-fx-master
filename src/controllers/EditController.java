@@ -1,14 +1,17 @@
 package controllers;
 
+import application.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import qcm.models.pojo.Rang;
 import qcm.models.pojo.Utilisateur;
+import qcm.utils.GenericCellFactory;
 
-public class EditController extends ModalController {
+public class EditController extends AbstractController {
 
 	@FXML
 	private TextField txtNom;
@@ -26,7 +29,7 @@ public class EditController extends ModalController {
 	private TextField txtPassword;
 	
 	@FXML
-	private ComboBox cbRang;
+	private ComboBox<Rang> cmbRang;
 
 	@FXML
 	private Button btOkay;
@@ -35,6 +38,12 @@ public class EditController extends ModalController {
 	private Button btCancel;
 
 	private Utilisateur user;
+	
+	@FXML
+	public void initialize() {
+		cmbRang.setCellFactory(new GenericCellFactory<Rang>());
+		
+	}
 
 	public void setUser(Utilisateur user) {
 		this.user = user;
@@ -108,5 +117,13 @@ public class EditController extends ModalController {
 			return false;
 		}
 	}
+	public void setMainApp(Main mainApp) {
+		super.setMainApp(mainApp);
+		cmbRang.setItems(mainApp.getRangsList());
+		
+		//cmbRangs.setItems(main)
+		// lblCount.textProperty().bind(mainApp.getTaskQueue().getService().progressProperty().asString());
+	}
+
 
 }

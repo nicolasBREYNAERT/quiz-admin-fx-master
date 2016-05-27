@@ -62,7 +62,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <ComboBox fx:id="cbRang" prefHeight="25.0" prefWidth="401.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cmbRang" prefHeight="25.0" prefWidth="401.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <ButtonBar layoutX="286.0" layoutY="246.0" prefHeight="40.0" prefWidth="285.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">

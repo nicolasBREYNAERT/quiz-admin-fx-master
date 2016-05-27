@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import qcm.models.pojo.Utilisateur;
 
-public class LoginController extends ModalController {
+public class LoginController extends AbstractController {
 
 	private Main mainApp;
 	@FXML

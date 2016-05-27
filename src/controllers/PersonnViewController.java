@@ -14,6 +14,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import qcm.models.pojo.Questionnaire;
+import qcm.models.pojo.Rang;
 import qcm.models.pojo.Reponse;
 import qcm.models.pojo.Utilisateur;
 import qcm.utils.GenericCellFactory;

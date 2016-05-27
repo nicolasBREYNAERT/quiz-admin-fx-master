@@ -5,7 +5,6 @@ import java.util.function.Function;
 
 import application.Main;
 import controllers.AbstractController;
-import controllers.ModalController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -16,7 +15,7 @@ import javafx.stage.Window;
 
 public class ViewUtils {
 
-	public static <T extends ModalController> boolean showDialog(String fxmlFile, Window owner, Function<T, String> initControllerFunc, Function<T, Boolean> finalControllerFunc) {
+	public static <T extends AbstractController> boolean showDialog(String fxmlFile, Window owner, Function<T, String> initControllerFunc, Function<T, Boolean> finalControllerFunc) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class.getResource(fxmlFile));
@@ -46,7 +45,7 @@ public class ViewUtils {
 		}
 	}
 
-	public static <T extends ModalController> boolean showDialog(String fxmlFile, Window owner, Function<T, String> initControllerFunc) {
+	public static <T extends AbstractController> boolean showDialog(String fxmlFile, Window owner, Function<T, String> initControllerFunc) {
 		return showDialog(fxmlFile, owner, initControllerFunc, null);
 	}
 

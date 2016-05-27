@@ -22,6 +22,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import qcm.models.pojo.Domaine;
 import qcm.models.pojo.Questionnaire;
+import qcm.models.pojo.Rang;
 import qcm.models.pojo.Reponse;
 import qcm.models.pojo.Utilisateur;
 import qcm.utils.ViewUtils;
@@ -35,6 +36,7 @@ public class Main extends Application implements Observer {
 	private ObservableList<Utilisateur> usersList;
 	private ObservableList<Questionnaire> quizList;
 	private ObservableList<Reponse> reponsesList;
+	private ObservableList<Rang> rangsList;
 	private PersonnViewController personnViewController;
 	private DomainViewController domainViewController;
 	private AccueilController accueilController;
@@ -149,6 +151,7 @@ public class Main extends Application implements Observer {
 		usersList = webGate.getList(Utilisateur.class);
 		quizList = webGate.getList(Questionnaire.class);
 		reponsesList = webGate.getList(Reponse.class);
+		rangsList = webGate.getList(Rang.class);
 		/*
 		 * try { List<Utilisateur> users = webGate.getAll(Utilisateur.class); for (Utilisateur u : users) { usersList.add(u); } } catch (IOException e) { // TODO Alert Bootstrap JavaFX
 		 * e.printStackTrace(); }
@@ -207,11 +210,16 @@ public class Main extends Application implements Observer {
 	public ObservableList<Reponse> getReponsesList() {
 		return reponsesList;
 	}
-
+	
+	public ObservableList<Rang> getRangsList() {
+		return rangsList;
+	}
+	
 	public void loadLists() {
 		taskQueue.getAll(Utilisateur.class);
 		taskQueue.getAll(Questionnaire.class);
 		taskQueue.getAll(Reponse.class);
+		taskQueue.getAll(Rang.class);
 		//taskQueue.getAll(Domaine.class);
 	}
 
