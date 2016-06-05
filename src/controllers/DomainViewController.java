@@ -1,5 +1,6 @@
 package controllers;
 
+import application.Main;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -23,11 +24,26 @@ public class DomainViewController extends AbstractController {
 	private void initialize() {
     	// Initialize the domain table
     	domain.setCellValueFactory((CellDataFeatures<Domaine, String> feature) -> {
-			Utilisateur domain = feature.getValue();
+			Domaine domain = feature.getValue();
 			return new SimpleObjectProperty<>(domain.getLibelle());
 		});
+    	showDomain(null);
+    	domainTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showDomain(newValue));
+    }
+    
+    public void setMainApp(Main mainApp) {
+		super.setMainApp(mainApp);
+		domainTable.setItems(mainApp.getDomainData());
     }
     public DomainViewController() {
 		// TODO Auto-generated constructor stub
+	}
+    
+    private void showDomain(Domaine newValue) {
+		if (newValue != null) {
+			libelleLabel.setText(newValue.getLibelle());	
+		} else {
+			libelleLabel.setText("");	
+		}
 	}
 }

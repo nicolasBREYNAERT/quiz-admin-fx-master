@@ -36,7 +36,11 @@ public class Main extends Application implements Observer {
 	private ObservableList<Utilisateur> usersList;
 	private ObservableList<Questionnaire> quizList;
 	private ObservableList<Reponse> reponsesList;
+
 	private ObservableList<Rang> rangsList;
+
+	private ObservableList<Domaine> domainsList;
+
 	private PersonnViewController personnViewController;
 	private DomainViewController domainViewController;
 	private AccueilController accueilController;
@@ -151,7 +155,11 @@ public class Main extends Application implements Observer {
 		usersList = webGate.getList(Utilisateur.class);
 		quizList = webGate.getList(Questionnaire.class);
 		reponsesList = webGate.getList(Reponse.class);
+
 		rangsList = webGate.getList(Rang.class);
+
+		domainsList=webGate.getList(Domaine.class);
+
 		/*
 		 * try { List<Utilisateur> users = webGate.getAll(Utilisateur.class); for (Utilisateur u : users) { usersList.add(u); } } catch (IOException e) { // TODO Alert Bootstrap JavaFX
 		 * e.printStackTrace(); }
@@ -174,6 +182,10 @@ public class Main extends Application implements Observer {
 
 	public ObservableList<Utilisateur> getPersonData() {
 		return usersList;
+	}
+	
+	public ObservableList<Domaine> getDomainData() {
+		return domainsList;
 	}
 
 	public void setPersonData(ObservableList<Utilisateur> personData) {
@@ -219,8 +231,12 @@ public class Main extends Application implements Observer {
 		taskQueue.getAll(Utilisateur.class);
 		taskQueue.getAll(Questionnaire.class);
 		taskQueue.getAll(Reponse.class);
+
 		taskQueue.getAll(Rang.class);
 		//taskQueue.getAll(Domaine.class);
+
+		taskQueue.getAll(Domaine.class);
+
 	}
 
 	public BorderPane getRootLayout() {
